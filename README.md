@@ -10,7 +10,7 @@ Code that makes my Falcon alive 😎
 - Raspberry PI Zero W with BalenaOS 
 - Syncano middleware for handling websockets for controlling the Falcon from any place in a galaxy
 
-![Millennium-Falcon.js](readme/pwa.gif)
+![Millennium-Falcon.js](readme/hyperdrive.gif)
 
 ## See it in action
 
