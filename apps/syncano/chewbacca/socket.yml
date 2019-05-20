@@ -1,0 +1,9 @@
+name: chewbacca
+description: socket for the Falcon control
+version: 0.0.2
+
+endpoints:
+  global-messages:
+    channel: global-messages
+  cockpit:
+    file: cockpit.js

@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "@syncano/cli": "^0.15.0"
+  },
+  "devDependencies": {}
+}

@@ -1,0 +1,5 @@
+hosting:
+  staging:
+    src: webapp/dist
+    config:
+      browser_router: true

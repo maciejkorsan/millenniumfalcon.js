@@ -1,0 +1,71 @@
+html {
+  touch-action: manipulation;
+  margin: 0;
+  padding: 0;
+  background: url('../images/bg.png') #012A54;
+}
+
+body {
+  margin: 0;
+  padding: 16px;
+  min-height: 100vh;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.falcon {
+  position: relative;
+  &__button {
+    position: absolute;
+    background: none;
+    border: none;
+    outline: none;
+    display: block;
+    cursor: pointer;
+    z-index: 3;
+    outline: none;
+    -webkit-tap-highlight-color: transparent;
+    &.-hyperdrive {
+    bottom: 10%;
+    width: 100%;
+    height: 20%;  
+    left: 0;
+    }
+    &.-headlights {
+      top: 5%;
+      width: 60%;
+      height: 20%;
+      left: 50%;
+      transform: translate(-50%, 0);
+    }
+    &.-cockpit {
+      top: 28%;
+      width: 20%;
+      height: 20%;
+      right: 0;
+    }
+  }
+  &__light {
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    will-change: opacity;
+    transition: opacity 0.2s ease-in;
+    &.-active {
+      opacity: 1;
+    }
+  }
+  &__model {
+    display: block;
+    width: 100%;
+    pointer-events: none;
+    max-width: 360px;
+    margin: 0 auto;
+  }
+}
