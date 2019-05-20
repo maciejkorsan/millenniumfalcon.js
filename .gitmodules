@@ -1,0 +1,3 @@
+[submodule "falcon"]
+	path = falcon
+	url = gh_maciejkorsan@git.balena-cloud.com:gh_maciejkorsan/falcon.git
