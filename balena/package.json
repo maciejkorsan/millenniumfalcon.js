@@ -1,0 +1,29 @@
+{
+  "name": "falcon-balena",
+  "version": "1.0.0",
+  "description": "Lego Millennium Falcon controls on balena.io",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [
+    "resin.io",
+    "lego",
+    "nodejs",
+    "iot",
+    "millennium falcon"
+  ],
+  "author": "Maciej Korsan",
+  "license": "MIT",
+  "dependencies": {
+    "express": "*",
+    "onoff": "^1.1.9",
+    "@syncano/client": "^0.15.0",
+    "websocket": "^1.0.28"
+  },
+  "devDependencies": {
+    "axios": "^0.18.0",
+    "ws": "^7.0.0"
+  }
+}

@@ -1,0 +1,11 @@
+[Unit]
+Description=PulseAudio Sound System
+Before=sound.target
+
+[Service]
+BusName=org.pulseaudio.Server
+ExecStart=/usr/bin/pulseaudio --system
+Restart=always  
+
+[Install]
+WantedBy=session.target

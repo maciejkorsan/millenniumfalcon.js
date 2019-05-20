@@ -1,0 +1,39 @@
+# base-image for node on any machine using a template variable,
+# see more about dockerfile templates here: http://docs.resin.io/deployment/docker-templates/
+# and about resin base images here: http://docs.resin.io/runtime/resin-base-images/
+# Note the node:slim image doesn't have node-gyp
+FROM resin/%%RESIN_MACHINE_NAME%%-node:8-stretch
+
+RUN sed -i "s/^exit 101$/exit 0/" /usr/sbin/policy-rc.d
+
+# use apt-get if you need to install dependencies,
+# for instance if you need ALSA sound utils, just uncomment the lines below.
+RUN apt-get update && apt-get install -yq \
+    espeak rfkill  alsa-utils libasound2-dev libasound2-plugins libdbus-1-dev libglib2.0-dev libudev-dev libical-dev libreadline-dev -y && \
+    apt-get clean && rm -rf /var/lib/apt/lists/*
+
+
+# Defines our working directory in container
+WORKDIR /usr/src/app
+
+
+# Copies the package.json first for better cache on later pushes
+COPY package.json package.json
+COPY package-lock.json package-lock.json
+
+# This install npm dependencies on the resin.io build server,
+# making sure to clean up the artifacts it creates in order to reduce the image size.
+RUN JOBS=MAX npm install && npm cache verify && rm -rf /tmp/*
+
+# This will copy all files in our root to the working  directory in the container
+COPY . ./
+
+# Enable systemd init system in container
+ENV INITSYSTEM on
+
+#RUN /usr/bin/pulseaudio --start --log-target=stderr
+
+ENV DBUS_SYSTEM_BUS_ADDRESS unix:path=/host/run/dbus/system_bus_socket
+
+# server.js will run when container starts up on the device
+CMD ["npm", "start"]
