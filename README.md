@@ -14,5 +14,5 @@ Code that makes my Falcon alive 😎
 
 ## See it in action
 
-- [PWA controller](https://www.youtube.com/watch?v=uo0A3Vkxg6A)
+- [PWA controller](https://www.youtube.com/watch?v=DvYkgEYkRgY)
 - [GitHub notifications](https://www.youtube.com/watch?v=b4i_dZ_K0iQ) - yes, if you leave a star here, or at any of my repositories - I'll be notified 🔔
